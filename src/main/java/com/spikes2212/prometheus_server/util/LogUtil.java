@@ -16,4 +16,12 @@ public class LogUtil {
     public static void disable() {
         enabled = false;
     }
+    
+    public static void e(String title, String data) {
+        System.out.println(ANSI_COLORS.ANSI_RED + "Error - " + title + " : " + data + ANSI_COLORS.ANSI_RESET);
+    }
+
+    public static void d(String title, String data) {
+        System.out.println(ANSI_COLORS.ANSI_GREEN + "Data - " + title + " : " + data + ANSI_COLORS.ANSI_RESET);
+    }
 }
