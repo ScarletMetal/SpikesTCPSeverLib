@@ -17,17 +17,17 @@ public class TypedCollection<T extends Savable> {
         collection.insertOne(object.toDocument());
     }
 
-    public Document findOne(Document query) {
-        FindIterable<Document> iterable = collection.find();
+    public Document findOne(Document filter) {
+        FindIterable<Document> iterable = collection.find(filter);
         return iterable.first();
     }
 
-    public void updateOne(Document query, T object) {
-        collection.updateOne(query, object.toDocument());
+    public void updateOne(Document filter, T object) {
+        collection.updateOne(filter, object.toDocument());
     }
 
-    public void removeOne(Document query) {
-        collection.deleteOne(query);
+    public void removeOne(Document filter) {
+        collection.deleteOne(filter);
     }
 
 
