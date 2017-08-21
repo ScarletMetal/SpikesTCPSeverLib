@@ -11,6 +11,10 @@ public class Main {
         }
     }
 
+    private static void mongoInit() {
+
+    }
+
     public static void main(String[] args) {
         processArguments(args);
     }
