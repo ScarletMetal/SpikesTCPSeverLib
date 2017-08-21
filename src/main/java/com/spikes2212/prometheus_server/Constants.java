@@ -9,6 +9,8 @@ public class Constants {
         public static final String HOST = "localhost";
         public static final String GROOPS_DB_NAME = "rooms_db";
         public static final String USERS_DB_NAME = "users_db";
+        public static final String USERS_COLLECTION_NAME = "users_coll";
+        public static final String GROUPS_COLLECTION_NAME = "groups_coll";
         public static final int PORT = 27017;
     }
 }
