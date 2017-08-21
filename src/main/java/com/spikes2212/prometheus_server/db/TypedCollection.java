@@ -29,4 +29,7 @@ public class TypedCollection<T extends Savable> {
         return object;
     }
 
+    public void update(BasicDBObject query, T update) {
+        collection.update(query, update.toDocument());
+    }
 }
