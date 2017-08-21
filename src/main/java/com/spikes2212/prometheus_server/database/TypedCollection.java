@@ -22,5 +22,9 @@ public class TypedCollection<T extends Savable> {
         return iterable.first();
     }
 
+    public void updateOne(Document query, T object) {
+        collection.updateOne(query, object.toDocument());
+    }
+
 
 }
