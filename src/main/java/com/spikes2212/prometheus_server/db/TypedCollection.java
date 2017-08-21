@@ -1,4 +1,12 @@
 package com.spikes2212.prometheus_server.db;
 
-public class TypedCollection {
+import com.mongodb.DBCollection;
+
+public class TypedCollection<T extends Savable> {
+
+    private DBCollection collection;
+
+    public TypedCollection(DBCollection collection) {
+        this.collection = collection;
+    }
 }
