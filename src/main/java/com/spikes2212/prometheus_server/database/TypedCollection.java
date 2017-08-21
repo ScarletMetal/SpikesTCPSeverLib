@@ -10,7 +10,7 @@ public class TypedCollection<T extends Savable> {
         this.collection = collection;
     }
 
-    public void insert(T object) {
+    public void insertOne(T object) {
         collection.insertOne(object.toDocument());
     }
 
