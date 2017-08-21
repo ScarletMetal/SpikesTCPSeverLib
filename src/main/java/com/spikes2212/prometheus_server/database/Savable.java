@@ -1,10 +1,10 @@
 package com.spikes2212.prometheus_server.database;
 
-import com.mongodb.BasicDBObject;
+import org.bson.Document;
 
 public interface Savable {
     
-    public BasicDBObject toDocument();
+    public Document toDocument();
 
-    public BasicDBObject fromDocument(BasicDBObject object);
+    public Document fromDocument(Document object);
 }
