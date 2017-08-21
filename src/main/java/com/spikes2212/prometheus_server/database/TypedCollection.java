@@ -16,11 +16,7 @@ public class TypedCollection<T extends Savable> {
     public void insertOne(T object) {
         collection.insertOne(object.toDocument());
     }
-    public void insertMany(List<T> objects) {
-        for (T object : objects) {
-            insertOne(object);
-        }
-    }
+
     public Document findOne(Document query) {
         FindIterable<Document> iterable = collection.find();
         return iterable.first();
