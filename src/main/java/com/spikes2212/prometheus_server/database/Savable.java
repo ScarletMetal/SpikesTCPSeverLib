@@ -6,5 +6,5 @@ public interface Savable {
     
     public Document toDocument();
 
-    public Document fromDocument(Document object);
+    public void fromDocument(Document object);
 }
