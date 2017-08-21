@@ -1,11 +1,12 @@
 package com.spikes2212.prometheus_server.database;
 
 import com.mongodb.client.MongoCollection;
+import org.bson.Document;
 
 public class TypedCollection<T extends Savable> {
-    private MongoCollection collection;
+    private MongoCollection<Document> collection;
 
-    public TypedCollection(MongoCollection collection) {
+    public TypedCollection(MongoCollection<Document> collection) {
         this.collection = collection;
     }
 
