@@ -4,6 +4,7 @@ import com.mongodb.BasicDBObject;
 
 public interface DBObject {
     
-    public BasicDBObject getDocument();
+    public BasicDBObject toDocument();
 
+    public BasicDBObject fromDocument(BasicDBObject object);
 }
