@@ -6,7 +6,7 @@ import com.spikes2212.prometheus_server.util.LogUtil;
 
 
 public class Main {
-    private static MongoDatabase roomsDB;
+    private static MongoDatabase groupsDB;
     private static MongoDatabase usersDB;
 
     private static void processArguments(String[] args) {
@@ -20,7 +20,7 @@ public class Main {
     private static void mongoInit() {
         MongoClient client = new MongoClient(Constants.MONGODB.HOST, Constants.MONGODB.PORT);
 
-        roomsDB = client.getDatabase(Constants.MONGODB.ROOMS_DB_NAME);
+        groupsDB = client.getDatabase(Constants.MONGODB.GROOPS_DB_NAME);
         LogUtil.data("Loading rooms db", "success");
         usersDB = client.getDatabase(Constants.MONGODB.USERS_DB_NAME);
         LogUtil.data("loading users db", "success");
