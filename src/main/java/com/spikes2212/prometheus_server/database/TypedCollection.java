@@ -1,4 +1,4 @@
-package com.spikes2212.prometheus_server.db;
+package com.spikes2212.prometheus_server.database;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.Cursor;
