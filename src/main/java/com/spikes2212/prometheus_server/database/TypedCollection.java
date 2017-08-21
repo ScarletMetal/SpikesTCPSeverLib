@@ -26,5 +26,9 @@ public class TypedCollection<T extends Savable> {
         collection.updateOne(query, object.toDocument());
     }
 
+    public void removeOne(Document query) {
+        collection.deleteOne(query);
+    }
+
 
 }
