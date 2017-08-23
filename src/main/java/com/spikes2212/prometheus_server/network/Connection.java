@@ -16,4 +16,13 @@ public class Connection {
         this.input  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         this.output = new DataOutputStream(socket.getOutputStream());
     }
+
+    public void writeData(String data) throws IOException {
+        output.write((data+"\n").getBytes());
+    }
+
+    public String readLine() throws IOException {
+        return input.readLine();
+    }
+
 }
