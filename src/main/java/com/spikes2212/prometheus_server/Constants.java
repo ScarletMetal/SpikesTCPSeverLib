@@ -13,4 +13,11 @@ public class Constants {
         public static final String GROUPS_COLLECTION_NAME = "groups_coll";
         public static final int PORT = 27017;
     }
+
+    public static interface ID {
+        public static final int MAX_ID_CODE = 126;
+        public static final int MIN_ID_CODE = 48;
+
+        public static final int DEFAULT_ID_SIZE = 12;
+    }
 }
