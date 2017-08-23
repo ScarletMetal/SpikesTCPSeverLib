@@ -19,14 +19,14 @@ public class LogUtil {
 
     public static void error(String title, String data) {
         if (enabled) {
-            System.out.println(ANSI_COLORS.ANSI_RED + "Error Log from thread " + Thread.currentThread().getId());
+            System.out.println(ANSI_COLORS.ANSI_RED + "Error Log from thread " + Thread.currentThread().getId() + ANSI_COLORS.ANSI_RESET);
             System.out.println(ANSI_COLORS.ANSI_RED + "Error - " + title + " : " + data + ANSI_COLORS.ANSI_RESET);
         }
     }
 
     public static void data(String title, String data) {
         if (enabled) {
-            System.out.println(ANSI_COLORS.ANSI_GREEN + "Data Log from thread " + Thread.currentThread().getId());
+            System.out.println(ANSI_COLORS.ANSI_GREEN + "Data Log from thread " + Thread.currentThread().getId() + ANSI_COLORS.ANSI_RESET);
             System.out.println(ANSI_COLORS.ANSI_GREEN + "Data - " + title + " : " + data + ANSI_COLORS.ANSI_RESET);
         }
     }
