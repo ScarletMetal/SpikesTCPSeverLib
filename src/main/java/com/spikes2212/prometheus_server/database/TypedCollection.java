@@ -4,8 +4,6 @@ import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
-import java.util.List;
-
 public class TypedCollection<T extends Savable> {
     private MongoCollection<Document> collection;
 
