@@ -25,6 +25,10 @@ public class Connection {
         return input.readLine();
     }
 
+    public boolean isRechable(int timeout) throws IOException {
+        return socket.getInetAddress().isReachable(timeout);
+    }
+
     public void startListeningThread() {
         listeningThread = new Thread(new ListenningRunnable(this));
         listeningThread.start();
