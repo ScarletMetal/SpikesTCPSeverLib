@@ -30,7 +30,7 @@ public class Connection {
     }
 
     public void startListeningThread() {
-        listeningThread = new Thread(new ListenningRunnable(this));
+        listeningThread = new Thread(new ListeningRunnable(this));
         listeningThread.start();
     }
 }

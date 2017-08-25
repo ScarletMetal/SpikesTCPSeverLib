@@ -5,10 +5,10 @@ import com.spikes2212.prometheus_server.util.LogUtil;
 
 import java.io.IOException;
 
-public class ListenningRunnable implements Runnable {
+public class ListeningRunnable implements Runnable {
 
     private Connection connection;
-    public ListenningRunnable(Connection connection) {
+    public ListeningRunnable(Connection connection) {
         this.connection = connection;
     }
 
