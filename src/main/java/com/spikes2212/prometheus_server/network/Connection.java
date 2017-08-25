@@ -10,7 +10,7 @@ public class Connection {
     private Socket socket;
     private DataOutputStream output;
     private BufferedReader input;
-    private Thread listenningThread;
+    private Thread listeningThread;
     public Connection(Socket socket) throws IOException {
         this.socket = socket;
         this.input  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -25,8 +25,8 @@ public class Connection {
         return input.readLine();
     }
 
-    public void startListenningThread() {
-        listenningThread = new Thread(new ListenningRunnable(this));
-        listenningThread.start();
+    public void startListeningThread() {
+        listeningThread = new Thread(new ListenningRunnable(this));
+        listeningThread.start();
     }
 }
