@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class ConnectionUtil {
+public class NetworkUtil {
 
     private static boolean isURLReachable(String urlString) throws IOException {
 
