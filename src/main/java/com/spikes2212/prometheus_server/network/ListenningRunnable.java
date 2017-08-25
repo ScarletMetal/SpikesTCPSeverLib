@@ -13,6 +13,12 @@ public class ListenningRunnable implements Runnable {
     }
 
     public void run() {
-
+        try {
+            while (connection.isReachable(Constants.NETWORK.SOCKET_TIMEOUT)) {
+            }
+        } catch (IOException ioe) {
+            LogUtil.error("IOE while running main listening loop", "");
+            ioe.printStackTrace();
+        }
     }
 }
