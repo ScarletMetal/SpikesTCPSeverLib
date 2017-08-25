@@ -10,7 +10,7 @@ public class Connection {
     private Socket socket;
     private DataOutputStream output;
     private BufferedReader input;
-
+    private Thread listeningThread;
     public Connection(Socket socket) throws IOException {
         this.socket = socket;
         this.input  = new BufferedReader(new InputStreamReader(socket.getInputStream()));
@@ -25,4 +25,12 @@ public class Connection {
         return input.readLine();
     }
 
+    public boolean isReachable(int timeout) throws IOException {
+        return socket.getInetAddress().isReachable(timeout);
+    }
+
+    public void startListeningThread() {
+        listeningThread = new Thread(new ListeningRunnable(this));
+        listeningThread.start();
+    }
 }
