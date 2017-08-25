@@ -14,7 +14,8 @@ public class ListeningRunnable implements Runnable {
 
     public void run() {
         try {
-            while (connection.isReachable(Constants.NETWORK.SOCKET_TIMEOUT)) {
+            String data;
+            while ((data = connection.readLine()) != null) {
             }
         } catch (IOException ioe) {
             LogUtil.error("IOE while running main listening loop", "");
