@@ -25,7 +25,7 @@ public class Connection {
         return input.readLine();
     }
 
-    public boolean isRechable(int timeout) throws IOException {
+    public boolean isReachable(int timeout) throws IOException {
         return socket.getInetAddress().isReachable(timeout);
     }
 
