@@ -1,8 +1,11 @@
 package com.spikes2212.prometheus_server.network;
 
-import com.spikes2212.prometheus_server.Constants;
+import com.spikes2212.prometheus_server.network.message.Message;
+import com.spikes2212.prometheus_server.network.message.UnknownMessageTypeException;
+import com.spikes2212.prometheus_server.util.JsonUtil;
 import com.spikes2212.prometheus_server.util.LogUtil;
 
+import javax.lang.model.type.UnknownTypeException;
 import java.io.IOException;
 
 public class ListeningRunnable implements Runnable {
@@ -16,10 +19,17 @@ public class ListeningRunnable implements Runnable {
         try {
             String data;
             while ((data = connection.readLine()) != null) {
+                Message msg = JsonUtil.fromJson(data, Message.class);
+
             }
         } catch (IOException ioe) {
             LogUtil.error("IOE while running main listening loop", "");
             ioe.printStackTrace();
+        }
+    }
+    private void processMessage(Object msg) throws UnknownMessageTypeException {
+        if (! (msg instanceof Message)) {
+            throw new UnknownMessageTypeException(msg);
         }
     }
 }
