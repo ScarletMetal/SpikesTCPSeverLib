@@ -2,12 +2,17 @@ package com.spikes2212.prometheus_server;
 
 import com.mongodb.MongoClient;
 import com.mongodb.client.MongoDatabase;
+import com.spikes2212.prometheus_server.database.TypedCollection;
+import com.spikes2212.prometheus_server.network.SocketContainer;
+import com.spikes2212.prometheus_server.network.data.Group;
+import com.spikes2212.prometheus_server.network.data.User;
 import com.spikes2212.prometheus_server.util.LogUtil;
 
 
 public class Main {
-    private static MongoDatabase groupsDB;
-    private static MongoDatabase usersDB;
+
+    private static TypedCollection<Group> groupsCollection;
+    private static TypedCollection<User> usersCollection;
 
     private static void processArguments(String[] args) {
         LogUtil.disable();
@@ -20,14 +25,24 @@ public class Main {
     private static void mongoInit() {
         MongoClient client = new MongoClient(Constants.MONGODB.HOST, Constants.MONGODB.PORT);
 
-        groupsDB = client.getDatabase(Constants.MONGODB.GROOPS_DB_NAME);
-        LogUtil.data("Loading rooms db", "success");
-        usersDB = client.getDatabase(Constants.MONGODB.USERS_DB_NAME);
-        LogUtil.data("loading users db", "success");
-    }
+        MongoDatabase mainDB = client.getDatabase(Constants.MONGODB.DB_NAME);
+        LogUtil.data("Loading main db", "success");
 
+        usersCollection =
+                new TypedCollection<User>(mainDB.getCollection(Constants.MONGODB.USERS_COLLECTION_NAME));
+        groupsCollection =
+                new TypedCollection<Group>(mainDB.getCollection(Constants.MONGODB.GROUPS_COLLECTION_NAME));
+        LogUtil.data("monogo initialization complete", "success");
+    }
+    private static void networkInit() {
+        SocketContainer container = new SocketContainer(groupsCollection, usersCollection);
+
+        container.startNetworking(Constants.NETWORK.PORT);
+    }
     public static void main(String[] args) {
         processArguments(args);
         mongoInit();
+        networkInit();
+
     }
 }
