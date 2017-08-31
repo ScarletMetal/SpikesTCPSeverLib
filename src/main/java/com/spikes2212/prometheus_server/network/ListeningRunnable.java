@@ -31,5 +31,8 @@ public class ListeningRunnable implements Runnable {
         if (! (msg instanceof Message)) {
             throw new UnknownMessageTypeException(msg);
         }
+
+        Message message = (Message) msg;
     }
+
 }
