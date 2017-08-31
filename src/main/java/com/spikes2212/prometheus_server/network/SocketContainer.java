@@ -15,4 +15,8 @@ public class SocketContainer {
         this.groupsCollection = groupsCollection;
         this.usersCollection = usersCollection;
     }
+
+    public void startNetworking(int port) {
+
+    }
 }
