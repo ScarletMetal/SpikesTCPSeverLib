@@ -24,8 +24,10 @@ public class SocketContainer {
     public void startNetworking(int port) {
         try {
             ServerSocket server = new ServerSocket(port);
+            LogUtil.data("startNetworking", "created server socket successfully");
             while (true) {
                 Socket socket = server.accept();
+                LogUtil.data("new client", "accepted new client");
                 Connection connection = new Connection(socket);
                 connection.startListeningThread();
             }
