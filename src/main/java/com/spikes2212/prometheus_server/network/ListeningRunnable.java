@@ -1,6 +1,7 @@
 package com.spikes2212.prometheus_server.network;
 
 import com.spikes2212.prometheus_server.network.message.Message;
+import com.spikes2212.prometheus_server.network.message.TestMessage;
 import com.spikes2212.prometheus_server.network.message.UnknownMessageTypeException;
 import com.spikes2212.prometheus_server.util.JsonUtil;
 import com.spikes2212.prometheus_server.util.LogUtil;
@@ -28,11 +29,19 @@ public class ListeningRunnable implements Runnable {
         }
     }
     private void processMessage(Object msg) throws UnknownMessageTypeException {
-        if (! (msg instanceof Message)) {
+        if (!(msg instanceof Message)) {
             throw new UnknownMessageTypeException(msg);
         }
 
         Message message = (Message) msg;
+
+        if (msg instanceof TestMessage) {
+            processTestMessage((TestMessage)message);
+        }
+    }
+
+    private void processTestMessage(TestMessage message) {
+        System.out.println(message.myName);
     }
 
 }
