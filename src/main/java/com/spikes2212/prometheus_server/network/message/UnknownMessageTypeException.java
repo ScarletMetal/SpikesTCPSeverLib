@@ -9,5 +9,9 @@ public class UnknownMessageTypeException extends Throwable {
         this.msg = msg;
     }
 
+    public Class getMessageType() {
+        return msg.getClass();
+    }
+
 
 }
