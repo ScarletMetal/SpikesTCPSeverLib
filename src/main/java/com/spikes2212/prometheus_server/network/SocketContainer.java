@@ -29,7 +29,7 @@ public class SocketContainer {
                 Socket socket = server.accept();
                 LogUtil.data("new client", "accepted new client");
                 Connection connection = new Connection(socket);
-                connection.startListeningThread();
+                connection.startListeningThread(groupsCollection, usersCollection);
             }
         } catch (IOException e) {
             e.printStackTrace();
