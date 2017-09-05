@@ -15,9 +15,11 @@ public class TypedCollection<T extends Savable> {
         collection.insertOne(object.toDocument());
     }
 
-    public Document findOne(Document filter) {
+    public T findOne(Document filter, Class<T> type) throws IllegalAccessException, InstantiationException {
         FindIterable<Document> iterable = collection.find(filter);
-        return iterable.first();
+        T t = type.newInstance();
+        t.fromDocument(iterable.first());
+        return t;
     }
 
     public void updateOne(Document filter, T object) {
