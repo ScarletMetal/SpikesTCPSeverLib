@@ -7,7 +7,8 @@ import org.bson.Document;
 import java.util.Random;
 
 public class IDUtil {
-    public static String generateIDForCollection(int idLength, TypedCollection collection) {
+    public static String generateIDForCollection(int idLength, TypedCollection collection)
+            throws InstantiationException, IllegalAccessException {
         String id;
         StringBuilder builder = new StringBuilder();
 
@@ -19,7 +20,8 @@ public class IDUtil {
                 builder.append((char) randomID);
             }
             id = builder.toString();
-        } while (collection.findOne(new Document("id", id)) == null);
+        } while (collection.findOne(new Document("id", id),
+                collection.getClass().getGenericSuperclass().getClass()) == null);
 
         return id;
     }
