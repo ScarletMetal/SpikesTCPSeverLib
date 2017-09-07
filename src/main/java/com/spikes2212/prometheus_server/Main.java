@@ -41,6 +41,7 @@ public class Main {
     }
     public static void main(String[] args) {
         processArguments(args);
-        LogUtil.data("Test", "test");
+        mongoInit();
+        networkInit();
     }
 }

@@ -8,6 +8,7 @@ import com.spikes2212.prometheus_server.util.JsonUtil;
 import com.spikes2212.prometheus_server.util.LogUtil;
 
 import java.io.IOException;
+import java.util.Map;
 
 public class ListeningRunnable implements Runnable {
 
@@ -25,12 +26,16 @@ public class ListeningRunnable implements Runnable {
         try {
             String data;
             while ((data = connection.readLine()) != null) {
-                Message msg = JsonUtil.fromJson(data, Message.class);
+                Map<String, String> messageMap = JsonUtil.fromJson(data);
+                processMessageMap(messageMap);
             }
         } catch (IOException ioe) {
             LogUtil.error("IOE while running main listening loop", "");
             ioe.printStackTrace();
         }
+    }
+    private void processMessageMap(Map<String, String> messageMap) {
+
     }
 
 }
