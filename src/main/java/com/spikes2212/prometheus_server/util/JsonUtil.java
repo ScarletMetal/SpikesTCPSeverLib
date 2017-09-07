@@ -18,6 +18,10 @@ public class JsonUtil {
     */
 
     public static Map<String, String> fromJson(String json) {
-        return new Gson().fromJson(json, new TypeToken<HashMap<String, String>>() {}.getType());
+        TypeToken<HashMap<String, String>> typeToken = new HashMapTypeToken();
+        return new Gson().fromJson(json, typeToken.getType());
+    }
+
+    private static class HashMapTypeToken extends TypeToken<HashMap<String, String>> {
     }
 }
