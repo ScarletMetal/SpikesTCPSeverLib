@@ -8,7 +8,7 @@ import java.util.Random;
 
 public class IDUtil {
     public static String generateIDForCollection(int idLength, TypedCollection collection)
-            throws InstantiationException, IllegalAccessException {
+            throws InstantiationException,  IllegalAccessException {
         String id;
         StringBuilder builder = new StringBuilder();
 
