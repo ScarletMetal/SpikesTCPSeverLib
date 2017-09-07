@@ -32,13 +32,5 @@ public class ListeningRunnable implements Runnable {
             ioe.printStackTrace();
         }
     }
-    private void processMessage(Object msg) throws UnknownMessageTypeException {
-        if (!(msg instanceof Message)) {
-            throw new UnknownMessageTypeException(msg);
-        }
-
-        Message message = (Message) msg;
-
-    }
 
 }
