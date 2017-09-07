@@ -4,7 +4,6 @@ import com.spikes2212.prometheus_server.database.TypedCollection;
 import com.spikes2212.prometheus_server.network.data.Group;
 import com.spikes2212.prometheus_server.network.data.User;
 import com.spikes2212.prometheus_server.network.message.Message;
-import com.spikes2212.prometheus_server.network.message.UnknownMessageTypeException;
 import com.spikes2212.prometheus_server.util.JsonUtil;
 import com.spikes2212.prometheus_server.util.LogUtil;
 
@@ -29,7 +28,7 @@ public class ListeningRunnable implements Runnable {
                 Message msg = JsonUtil.fromJson(data, Message.class);
             }
         } catch (IOException ioe) {
-            LogUtil.error("IOE while runninprocessMessage(msg);g main listening loop", "");
+            LogUtil.error("IOE while running main listening loop", "");
             ioe.printStackTrace();
         }
     }
