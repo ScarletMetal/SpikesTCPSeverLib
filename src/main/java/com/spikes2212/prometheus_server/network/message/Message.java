@@ -1,9 +1,9 @@
 package com.spikes2212.prometheus_server.network.message;
 
-public class Message {
-    public static interface MessageIDs{
+import java.util.Map;
 
-    }
+public abstract class Message {
     public String id;
-    public String[] args;
+
+
 }
