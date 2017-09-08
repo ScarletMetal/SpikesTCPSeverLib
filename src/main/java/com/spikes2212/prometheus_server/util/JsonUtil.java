@@ -11,12 +11,6 @@ public class JsonUtil {
         return new Gson().toJson(object);
     }
 
-    /*
-    public static <T> T fromJson(String json, Class<T> classOfT) {
-        return new Gson().fromJson(json, classOfT);
-    }
-    */
-
     public static Map<String, String> fromJson(String json) {
         TypeToken<HashMap<String, String>> typeToken = new HashMapTypeToken();
         return new Gson().fromJson(json, typeToken.getType());
