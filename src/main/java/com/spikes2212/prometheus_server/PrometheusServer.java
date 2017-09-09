@@ -20,6 +20,11 @@ public class PrometheusServer {
     private static TypedCollection<Group> groupsCollection;
     private static TypedCollection<User> usersCollection;
 
+    /**
+     * A method that processes the command line arguments given to the command.
+     * currently, the method enables {@link LogUtil} if given the flag "--log"
+     * @param args command args given to the program
+     */
     private static void processArguments(String[] args) {
         LogUtil.disable();
 
