@@ -11,20 +11,42 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * A class that wraps {@link ServerSocket} instance and it's listening loop
+ */
 public class SocketContainer {
+    /**
+     * {@link TypedCollection} instances that are passed to {@link ListeningRunnable} instance
+     */
     private TypedCollection<Group> groupsCollection;
     private TypedCollection<User>  usersCollection;
 
+    /**
+     * Constructs new {@link SocketContainer} instance that receives two {@link TypedCollection} instances
+     * @param groupsCollection {@link TypedCollection} instance for {@link Group} instances
+     * @param usersCollection {@link TypedCollection} instance for {@link User} instances
+     */
     public SocketContainer(TypedCollection<Group> groupsCollection,
                            TypedCollection<User> usersCollection) {
         this.groupsCollection = groupsCollection;
         this.usersCollection = usersCollection;
     }
 
+    /**
+     * A method that start the listening loop of an {@link ServerSocket} instance at the given port
+     * @param port the port that {@link ServerSocket} instance will opened on
+     */
     public void startNetworking(int port) {
         try {
+            /**
+             * creates new {@link SocketContainer} with {@param port}
+             */
             ServerSocket server = new ServerSocket(port);
             LogUtil.data("startNetworking", "created server socket successfully");
+            /**
+             * A loop that accepts new sockets with {@link ServerSocket#accept()}
+             * and creates new {@link Connection} from it
+             */
             while (true) {
                 Socket socket = server.accept();
                 LogUtil.data("new client", "accepted new client");
