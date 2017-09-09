@@ -62,6 +62,12 @@ public class PrometheusServer {
 
         container.startNetworking(Constants.NETWORK.PORT);
     }
+
+    /**
+     * The main method of the project.
+     * This method contains the starting sequence of the project.
+     * @param args command line arguments
+     */
     public static void main(String[] args) {
         processArguments(args);
         mongoInit();
