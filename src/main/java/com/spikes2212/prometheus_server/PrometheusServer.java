@@ -9,7 +9,7 @@ import com.spikes2212.prometheus_server.network.data.User;
 import com.spikes2212.prometheus_server.util.LogUtil;
 
 
-public class Main {
+public class PrometheusServer {
 
     private static TypedCollection<Group> groupsCollection;
     private static TypedCollection<User> usersCollection;
