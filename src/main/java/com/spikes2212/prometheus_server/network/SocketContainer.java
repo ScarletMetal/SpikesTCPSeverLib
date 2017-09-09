@@ -38,15 +38,8 @@ public class SocketContainer {
      */
     public void startNetworking(int port) {
         try {
-            /**
-             * creates new {@link SocketContainer} with {@param port}
-             */
             ServerSocket server = new ServerSocket(port);
             LogUtil.data("startNetworking", "created server socket successfully");
-            /**
-             * A loop that accepts new sockets with {@link ServerSocket#accept()}
-             * and creates new {@link Connection} from it
-             */
             while (true) {
                 Socket socket = server.accept();
                 LogUtil.data("new client", "accepted new client");
