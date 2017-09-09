@@ -40,8 +40,8 @@ public class LogUtil {
 
     /**
      * A method that allows to output data information in green color. including the number of the current thread
-     * @param title
-     * @param data
+     * @param title the title of the message
+     * @param data the data of the message
      */
     public static void data(String title, String data) {
         if (enabled) {
