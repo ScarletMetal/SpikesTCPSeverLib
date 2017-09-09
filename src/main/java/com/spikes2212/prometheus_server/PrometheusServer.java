@@ -8,9 +8,15 @@ import com.spikes2212.prometheus_server.network.data.Group;
 import com.spikes2212.prometheus_server.network.data.User;
 import com.spikes2212.prometheus_server.util.LogUtil;
 
-
+/**
+ * The Main class of the PrometheusServer_Server project.
+ * This class contains different methods to launch the different components of the project
+ */
 public class PrometheusServer {
 
+    /**
+     * Instances of {@link TypedCollection} that are initialized in {@link PrometheusServer#mongoInit()}
+     */
     private static TypedCollection<Group> groupsCollection;
     private static TypedCollection<User> usersCollection;
 
