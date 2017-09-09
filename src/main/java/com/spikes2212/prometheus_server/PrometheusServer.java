@@ -51,6 +51,12 @@ public class PrometheusServer {
                 new TypedCollection<Group>(mainDB.getCollection(Constants.MONGODB.GROUPS_COLLECTION_NAME));
         LogUtil.data("monogo initialization complete", "success");
     }
+
+    /**
+     * A method that creates an instance of {@link SocketContainer}
+     * and uses the {@link SocketContainer#startNetworking(int)} method.
+     * thus making it the last component of the project starting sequence
+     */
     private static void networkInit() {
         SocketContainer container = new SocketContainer(groupsCollection, usersCollection);
 
