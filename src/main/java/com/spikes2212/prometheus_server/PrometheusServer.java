@@ -33,6 +33,12 @@ public class PrometheusServer {
         }
     }
 
+    /**
+     * A method that initializes all the components releated to Mongodb in the project.
+     * This method creates {@link MongoDatabase} from {@link MongoClient instance}
+     * from the {@link MongoDatabase} {@link PrometheusServer#usersCollection} and {@link PrometheusServer#groupsCollection}
+     *      are initialized from the {@link MongoDatabase} instance
+     */
     private static void mongoInit() {
         MongoClient client = new MongoClient(Constants.MONGODB.HOST, Constants.MONGODB.PORT);
 
