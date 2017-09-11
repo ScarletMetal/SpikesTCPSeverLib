@@ -7,6 +7,8 @@ import org.bson.Document;
 /**
  * A Wrapper object for {@link MongoCollection} that operates only with a specific type of {@link Savable}
  * @param <T> A type of {@link Savable} that the {@link TypedCollection} instance works with
+ * @see MongoCollection
+ * @author Simon "C" Kharmatsky
  */
 public class TypedCollection<T extends Savable> {
     /**
