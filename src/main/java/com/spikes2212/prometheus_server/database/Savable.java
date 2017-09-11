@@ -4,6 +4,8 @@ import org.bson.Document;
 
 /**
  * An interface that is design to make an object to be parsed from and to {@link Document}
+ * @see Document
+ * @author Simon "C" Kharmatsky
  */
 public interface Savable {
 
