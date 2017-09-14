@@ -13,6 +13,9 @@ import java.net.Socket;
 
 /**
  * A class that wraps {@link ServerSocket} instance and it's listening loop
+ * @see ServerSocket
+ * @see com.spikes2212.prometheus_server.PrometheusServer
+ * @author Simon "C" Kharmatsky
  */
 public class SocketContainer {
     /**
