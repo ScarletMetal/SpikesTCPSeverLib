@@ -35,7 +35,13 @@ public class ListeningRunnable implements Runnable {
         }
     }
     private void processMessageMap(Map<String, String> messageMap) {
+        Message msg = null;
+        // processing message from messageMap
 
+        if (msg != null) {
+            msg.fromMap(messageMap);
+            msg.process(usersCollection, groupsCollection, connection);
+        }
     }
 
 }
