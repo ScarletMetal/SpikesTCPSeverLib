@@ -26,8 +26,8 @@ public class SocketContainer {
 
     /**
      * Constructs new {@link SocketContainer} instance that receives two {@link TypedCollection} instances
-     * @param groupsCollection {@link TypedCollection} instance for {@link Group} objects
-     * @param usersCollection {@link TypedCollection} instance for {@link User} objects
+     * @param groupsCollection {@link TypedCollection<Group>} instance that is used by {@link SocketContainer}
+     * @param usersCollection {@link TypedCollection<User>} instance that is used by {@link SocketContainer}
      */
     public SocketContainer(TypedCollection<Group> groupsCollection,
                            TypedCollection<User> usersCollection) {
