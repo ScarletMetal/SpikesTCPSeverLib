@@ -1,19 +1,25 @@
 package com.spikes2212.prometheus_server;
 
 /**
- * A class that contains all the constants for the project
+ * <p>
+ *     A class that contains all the constants for the project
+ * </p>
  */
 public class Constants {
     /**
-     * An interface that contains all the constants related to Networking
+     * <p>
+     *     An interface that contains all the constants related to Networking
+     * </p>
      */
     public static interface NETWORK {
-        // constant value for the ServerSocket port
+        /**<p>constant value for the ServerSocket port</p>*/
         public static final int PORT = 2212;
     }
 
     /**
-     * An interface that contains all the constants releated to mongodb
+     * <p>
+     *     An interface that contains all the constants releated to mongodb
+     * </p>
      */
     public static interface MONGODB {
         /** the host of the database */
@@ -29,7 +35,9 @@ public class Constants {
     }
 
     /**
-     * An interface that contains all the constants releated to ID generation
+     * <p>
+     *     An interface that contains all the constants releated to ID generation
+     * </p>
      */
     public static interface ID {
         /** The default ASCII code for the biggest digit possible*/
