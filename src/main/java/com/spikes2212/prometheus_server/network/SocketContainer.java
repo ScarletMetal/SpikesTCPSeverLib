@@ -12,20 +12,20 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * A class that wraps {@link ServerSocket} instance and it's listening loop
+ * <p>A class that wraps {@link ServerSocket} instance and it's listening loop</p>
  * @see ServerSocket
  * @see com.spikes2212.prometheus_server.PrometheusServer
  * @author Simon "C" Kharmatsky
  */
 public class SocketContainer {
-    /**
-     * {@link TypedCollection} instances that are passed to {@link ListeningRunnable} instance
-     */
     private TypedCollection<Group> groupsCollection;
     private TypedCollection<User>  usersCollection;
 
     /**
-     * Constructs new {@link SocketContainer} instance that receives two {@link TypedCollection} instances
+     * <p>
+     *     Constructs new {@link SocketContainer} instance that using {@link TypedCollection<Group>}
+     *     and {@link TypedCollection<User>} instances
+     * </p>
      * @param groupsCollection {@link TypedCollection<Group>} instance that is used by {@link SocketContainer}
      * @param usersCollection {@link TypedCollection<User>} instance that is used by {@link SocketContainer}
      */
@@ -36,7 +36,9 @@ public class SocketContainer {
     }
 
     /**
-     * A method that start the listening loop of an {@link ServerSocket} instance at the given port
+     * <p>
+     *     A method that start the IO loop of an {@link ServerSocket} instance at the given port
+     * </p>
      * @param port the port that {@link ServerSocket} instance will opened on
      */
     public void startNetworking(int port) {
