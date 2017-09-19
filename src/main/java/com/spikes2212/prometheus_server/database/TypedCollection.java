@@ -5,17 +5,17 @@ import com.mongodb.client.MongoCollection;
 import org.bson.Document;
 
 /**
- * A Wrapper object for {@link MongoCollection} that operates only with a specific type of {@link Savable}
+ * <p>A Wrapper object for {@link MongoCollection} that operates only with a specific type of {@link Savable}</p>
  * @param <T> A type of {@link Savable} that the {@link TypedCollection} instance works with
  */
 public class TypedCollection<T extends Savable> {
-    /**
-     * The {@link MongoCollection} that the {@link TypedCollection} instance wraps
-     */
     private MongoCollection<Document> collection;
 
     /**
-     * A constructor that constructs new instance of {@link TypedCollection}
+     * <p>
+     *     A constructor that constructs new instance of {@link TypedCollection},
+     *     using a {@link MongoCollection} instance
+     * </p>
      * @param collection The {@link MongoCollection} that the {@link TypedCollection} wraps
      */
     public TypedCollection(MongoCollection<Document> collection) {
@@ -23,7 +23,9 @@ public class TypedCollection<T extends Savable> {
     }
 
     /**
-     * A method that insert an instance of {@link T} into the {@link MongoCollection} instance
+     * <p>
+     *     This method inserts a given {@link T} instance in to {@link TypedCollection#collection}
+     * </p>
      * @param object instance of {@link T} to insert into the {@link MongoCollection}
      */
     public void insertOne(T object) {
@@ -31,8 +33,10 @@ public class TypedCollection<T extends Savable> {
     }
 
     /**
-     * A method that finds one object in the database according to the {@param filter}
-     * and returns object of type {@link T}
+     * <p>
+     *     This method finds document in {@link TypedCollection#collection}
+     *     and returns an instance of {@link T}
+     * </p>
      * @param filter the filter according to which the object in the database is searched
      * @param type the type that the method will return, usually {@link T}
      * @return returns instance of {@param type} that was parsed from document by {@link Savable#fromDocument(Document)}
@@ -47,7 +51,11 @@ public class TypedCollection<T extends Savable> {
     }
 
     /**
-     * A method that updates object that is found by the {@param filter} with the {@param object}
+     * <p>
+     *     This method updates a {@link Document} instance in {@link TypedCollection#collection}
+     *     that is found by a given filter of type {@link Document}
+     *     with a given instance of {@link T}, parsed with {@link Savable#toDocument()}
+     * </p>
      * @param filter a {@link Document} according to which the object will be searched in the {@link MongoCollection}
      * @param object the new object that will be written to the {@link MongoCollection}
      */
@@ -56,7 +64,10 @@ public class TypedCollection<T extends Savable> {
     }
 
     /**
-     * A method that removed object that is found by the {@param filter}
+     * <p>
+     *     This method removes a {@link Document} that is found by the given filter of type {@link Document}
+     *     from {@link TypedCollection#collection}
+     * </p>
      * @param filter a {@link Document} according to which the object will be searched
      */
     public void removeOne(Document filter) {
