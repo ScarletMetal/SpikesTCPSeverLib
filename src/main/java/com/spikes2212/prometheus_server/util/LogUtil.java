@@ -1,33 +1,41 @@
 package com.spikes2212.prometheus_server.util;
 
 /**
- * An Utility that allows colourful logging of info to the terminal
+ * <p>
+ *     An Utility that allows colourful logging of info to the terminal
+ * </p>
  */
 public class LogUtil {
-    /**
-     * An interface that defines different colors if the ANSI standard
-     */
     private static interface ANSI_COLORS {
         public static final String ANSI_RESET = "\u001B[0m";
         public static final String ANSI_RED = "\u001B[31m";
         public static final String ANSI_GREEN = "\u001B[32m";
     }
-
-    /**
-     * Methods that allow to enable and disable the logs
-     */
     private static boolean enabled;
 
+    /**
+     * <p>
+     *     A method that enables logs to the command line
+     * </p>
+     */
     public static void enable() {
         enabled = true;
     }
 
+    /**
+     * <p>
+     *     A method that disables logs to the command line
+     * </p>
+     */
     public static void disable() {
         enabled = false;
     }
 
     /**
-     * A method that allows to output information about an error in red color. including the number of the current thread
+     * <p>
+     *    A method that allows to output information about an error in red color.
+     *    including the number of the current thread
+     * </p>
      * @param title the title of the error
      * @param data the data of the error
      */
@@ -39,7 +47,9 @@ public class LogUtil {
     }
 
     /**
-     * A method that allows to output data information in green color. including the number of the current thread
+     * <p>
+     *     A method that allows to output data information in green color. including the number of the current thread
+     * </p>
      * @param title the title of the message
      * @param data the data of the message
      */

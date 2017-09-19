@@ -10,11 +10,30 @@ import com.spikes2212.prometheus_server.util.LogUtil;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * A {@link Runnable} that is passed to {@link Connection#listeningThread}
+ * This Class is responsible for receiving messages that are sent through the internet and process them.
+ *
+ * @see java.lang.Runnable
+ * @see Connection
+ * @see TypedCollection
+ * @author Simon "C" Kharmatsky
+ */
 public class ListeningRunnable implements Runnable {
 
     private Connection connection;
     private TypedCollection<Group> groupsCollection;
     private TypedCollection<User> usersCollection;
+
+    /**
+     * <p>
+     * A constructor that constructs {@link ListeningRunnable} using
+     * {@link TypedCollection<User>}, {@link TypedCollection<Group>} and {@link Connection} instances
+     * </p>
+     * @param connection {@link Connection} instance that is used by {@link ListeningRunnable}
+     * @param groupsCollection {@link TypedCollection<User>} instance that is used by {@link ListeningRunnable}
+     * @param usersCollection {@link TypedCollection<Group>} instance that is used by {@link ListeningRunnable}
+     */
     public ListeningRunnable(Connection connection, TypedCollection<Group> groupsCollection,
                              TypedCollection<User> usersCollection) {
         this.connection = connection;
@@ -22,6 +41,14 @@ public class ListeningRunnable implements Runnable {
         this.usersCollection = usersCollection;
     }
 
+    /**
+     * <p>
+     *     This method contains the main IO loop for {@link ListeningRunnable#connection}.
+     *     Using a loop to receive information from the {@link ListeningRunnable#connection},
+     *     it parses the received information from JSON and passes it to
+     *     {@link ListeningRunnable#processMessageMap(Map)}
+     * </p>
+     */
     public void run() {
         try {
             String data;
@@ -34,9 +61,16 @@ public class ListeningRunnable implements Runnable {
             ioe.printStackTrace();
         }
     }
+
+    /**
+     * <p>
+     * This method builds an instance of {@link Message} from a given {@link Map},
+     * and then processes it via {@link Message#process(TypedCollection, TypedCollection, Connection)}
+     * </p>
+     * @param messageMap the {@link Map} instance received from {@link ListeningRunnable#connection}
+     */
     private void processMessageMap(Map<String, String> messageMap) {
         Message msg = null;
-        // processing message from messageMap
 
         if (msg != null) {
             msg.fromMap(messageMap);

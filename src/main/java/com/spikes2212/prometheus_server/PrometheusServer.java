@@ -9,20 +9,22 @@ import com.spikes2212.prometheus_server.network.data.User;
 import com.spikes2212.prometheus_server.util.LogUtil;
 
 /**
+ * <p>
  * The Main class of the PrometheusServer_Server project.
  * This class contains different methods to launch the different components of the project
+ * </p>
  */
 public class PrometheusServer {
 
-    /**
-     * Instances of {@link TypedCollection} that are initialized in {@link PrometheusServer#mongoInit()}
-     */
     private static TypedCollection<Group> groupsCollection;
     private static TypedCollection<User> usersCollection;
 
     /**
-     * A method that processes the command line arguments given to the command.
-     * currently, the method enables {@link LogUtil} if given the flag "--log"
+     * <p>
+     *  This method processes the command line arguments given to the program.
+     *  if the flag --log is given uses {@link LogUtil#enable()} to enable colored logs to the terminal.
+     *  This method is the first in the project startup sequence
+     * </p>
      * @param args command args given to the program
      */
     private static void processArguments(String[] args) {
@@ -34,10 +36,13 @@ public class PrometheusServer {
     }
 
     /**
-     * A method that initializes all the components releated to Mongodb in the project.
-     * This method creates {@link MongoDatabase} from {@link MongoClient instance}
-     * from the {@link MongoDatabase} {@link PrometheusServer#usersCollection} and {@link PrometheusServer#groupsCollection}
-     *      are initialized from the {@link MongoDatabase} instance
+     * <p>
+     *  This method initializes all the components releated to Mongodb in the project.
+     *  It creates {@link MongoDatabase} from {@link MongoClient instance}
+     *  from the {@link MongoDatabase} {@link PrometheusServer#usersCollection} and {@link PrometheusServer#groupsCollection}
+     *  are initialized.
+     *  This method is the second in the project startup sequence
+     *  </p>
      */
     private static void mongoInit() {
         MongoClient client = new MongoClient(Constants.MONGODB.HOST, Constants.MONGODB.PORT);
@@ -52,10 +57,12 @@ public class PrometheusServer {
         LogUtil.data("monogo initialization complete", "success");
     }
 
-    /**
-     * A method that creates an instance of {@link SocketContainer}
-     * and uses the {@link SocketContainer#startNetworking(int)} method.
-     * thus making it the last component of the project starting sequence
+     /**
+     * <p>
+     *  This method creates an instance of {@link SocketContainer}
+     *  and uses the {@link SocketContainer#startNetworking(int)} method.
+     *  This method is the last in the project startup sequence
+     * </p>
      */
     private static void networkInit() {
         SocketContainer container = new SocketContainer(groupsCollection, usersCollection);
@@ -64,8 +71,10 @@ public class PrometheusServer {
     }
 
     /**
-     * The main method of the project.
-     * This method contains the starting sequence of the project.
+     * <p>
+     *  The main method of the project.
+     *  This method initializes the project according to the startup sequence mentioned above
+     * </p>
      * @param args command line arguments
      */
     public static void main(String[] args) {
