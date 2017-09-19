@@ -26,9 +26,10 @@ public class ListeningRunnable implements Runnable {
     private TypedCollection<User> usersCollection;
 
     /**
+     * <p>
      * A constructor that constructs {@link ListeningRunnable} using
      * {@link TypedCollection<User>}, {@link TypedCollection<Group>} and {@link Connection} instances
-     *
+     * </p>
      * @param connection {@link Connection} instance that is used by {@link ListeningRunnable}
      * @param groupsCollection {@link TypedCollection<User>} instance that is used by {@link ListeningRunnable}
      * @param usersCollection {@link TypedCollection<Group>} instance that is used by {@link ListeningRunnable}
@@ -41,9 +42,12 @@ public class ListeningRunnable implements Runnable {
     }
 
     /**
-     * Run Method, overridden from {@link Runnable#run()}
-     * This Method start listening loop for the {@link ListeningRunnable#connection}
-     * and process messages received by {@link Connection#input}
+     * <p>
+     *     This method contains the main IO loop for {@link ListeningRunnable#connection}.
+     *     Using a loop to receive information from the {@link ListeningRunnable#connection},
+     *     it parses the received information from JSON and passes it to
+     *     {@link ListeningRunnable#processMessageMap(Map)}
+     * </p>
      */
     public void run() {
         try {
@@ -59,12 +63,14 @@ public class ListeningRunnable implements Runnable {
     }
 
     /**
-     * A method that processes message from {@link Map} received by {@link ListeningRunnable#connection}
+     * <p>
+     * This method builds an instance of {@link Message} from a given {@link Map},
+     * and then processes it via {@link Message#process(TypedCollection, TypedCollection, Connection)}
+     * </p>
      * @param messageMap the {@link Map} instance received from {@link ListeningRunnable#connection}
      */
     private void processMessageMap(Map<String, String> messageMap) {
         Message msg = null;
-        // processing message from messageMap
 
         if (msg != null) {
             msg.fromMap(messageMap);
