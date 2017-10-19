@@ -10,7 +10,6 @@ import java.util.Map;
 /**
  * <p>A class for basic Message that is passed through the network from the client to the server and vice versa</p>
  * @see Connection
- * @see com.spikes2212.stsl.network.ListeningRunnable
  * @author Simon "C" Kharmatsky
  */
 public abstract class Message {
@@ -35,10 +34,7 @@ public abstract class Message {
      * This method is written in a way that allows any type that extends from {@link Message} to implements it,
      * thus allowing to process all the message types in the same way.
      * </p>
-     * @param users {@link TypedCollection} of {@link User}
-     * @param group {@link TypedCollection} of {@link Group}
-     * @param connection {@link Connection} instance through which the response {@link Message} will be sent
      */
-    public abstract void process(TypedCollection<User> users,
-                                 TypedCollection<Group> group, Connection connection);
+
+    public abstract void process();
 }
