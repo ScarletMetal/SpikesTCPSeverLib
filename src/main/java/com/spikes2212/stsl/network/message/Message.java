@@ -2,8 +2,6 @@ package com.spikes2212.stsl.network.message;
 
 import com.spikes2212.stsl.database.TypedCollection;
 import com.spikes2212.stsl.network.Connection;
-import com.spikes2212.stsl.network.data.Group;
-import com.spikes2212.stsl.network.data.User;
 
 import java.util.Map;
 
