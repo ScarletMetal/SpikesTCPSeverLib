@@ -1,9 +1,5 @@
 package com.spikes2212.stsl.network;
 
-import com.spikes2212.stsl.database.TypedCollection;
-import com.spikes2212.stsl.network.data.Group;
-import com.spikes2212.stsl.network.data.User;
-
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -27,12 +23,5 @@ public class Connection {
 
     public String readLine() throws IOException {
         return input.readLine();
-    }
-
-    public void startListeningThread(TypedCollection<Group> groupsCollection,
-                                     TypedCollection<User>  userCollection) {
-        listeningThread = new Thread(new ListeningRunnable(this,
-                groupsCollection, userCollection));
-        listeningThread.start();
     }
 }
