@@ -1,7 +1,7 @@
-package com.spikes2212.prometheus_server.util;
+package com.spikes2212.stsl.util;
 
-import com.spikes2212.prometheus_server.Constants;
-import com.spikes2212.prometheus_server.database.TypedCollection;
+import com.spikes2212.stsl.Constants;
+import com.spikes2212.stsl.database.TypedCollection;
 import org.bson.Document;
 
 import java.util.Random;

@@ -1,4 +1,4 @@
-package com.spikes2212.prometheus_server.util;
+package com.spikes2212.stsl.util;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;

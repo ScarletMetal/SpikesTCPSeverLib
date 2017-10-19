@@ -1,11 +1,9 @@
-package com.spikes2212.prometheus_server.network;
+package com.spikes2212.stsl.network;
 
-import com.mongodb.client.MongoDatabase;
-import com.spikes2212.prometheus_server.Constants;
-import com.spikes2212.prometheus_server.database.TypedCollection;
-import com.spikes2212.prometheus_server.network.data.Group;
-import com.spikes2212.prometheus_server.network.data.User;
-import com.spikes2212.prometheus_server.util.LogUtil;
+import com.spikes2212.stsl.database.TypedCollection;
+import com.spikes2212.stsl.network.data.Group;
+import com.spikes2212.stsl.network.data.User;
+import com.spikes2212.stsl.util.LogUtil;
 
 import java.io.IOException;
 import java.net.ServerSocket;
@@ -14,7 +12,7 @@ import java.net.Socket;
 /**
  * <p>A class that wraps {@link ServerSocket} instance and it's listening loop</p>
  * @see ServerSocket
- * @see com.spikes2212.prometheus_server.PrometheusServer
+ * @see com.spikes2212.stsl.PrometheusServer
  * @author Simon "C" Kharmatsky
  */
 public class SocketContainer {

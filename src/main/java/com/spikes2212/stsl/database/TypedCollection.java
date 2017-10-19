@@ -1,4 +1,4 @@
-package com.spikes2212.prometheus_server.database;
+package com.spikes2212.stsl.database;
 
 import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;

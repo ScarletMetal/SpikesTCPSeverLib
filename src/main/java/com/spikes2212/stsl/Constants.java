@@ -1,4 +1,4 @@
-package com.spikes2212.prometheus_server;
+package com.spikes2212.stsl;
 
 /**
  * <p>

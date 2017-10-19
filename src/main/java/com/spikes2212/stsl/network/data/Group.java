@@ -1,6 +1,6 @@
-package com.spikes2212.prometheus_server.network.data;
+package com.spikes2212.stsl.network.data;
 
-import com.spikes2212.prometheus_server.database.Savable;
+import com.spikes2212.stsl.database.Savable;
 import org.bson.Document;
 
 public class Group implements Savable {

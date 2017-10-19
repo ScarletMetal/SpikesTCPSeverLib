@@ -1,16 +1,16 @@
-package com.spikes2212.prometheus_server.network.message;
+package com.spikes2212.stsl.network.message;
 
-import com.spikes2212.prometheus_server.database.TypedCollection;
-import com.spikes2212.prometheus_server.network.Connection;
-import com.spikes2212.prometheus_server.network.data.Group;
-import com.spikes2212.prometheus_server.network.data.User;
+import com.spikes2212.stsl.database.TypedCollection;
+import com.spikes2212.stsl.network.Connection;
+import com.spikes2212.stsl.network.data.Group;
+import com.spikes2212.stsl.network.data.User;
 
 import java.util.Map;
 
 /**
  * <p>A class for basic Message that is passed through the network from the client to the server and vice versa</p>
  * @see Connection
- * @see com.spikes2212.prometheus_server.network.ListeningRunnable
+ * @see com.spikes2212.stsl.network.ListeningRunnable
  * @author Simon "C" Kharmatsky
  */
 public abstract class Message {
